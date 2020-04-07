@@ -15,9 +15,9 @@ jobs:
           - os: ubuntu-latest
             artifact_name: kintone-oauth-token-rs
             asset_name: kintone-oauth-token-rs-linux-amd64
-          - os: windows-latest
-            artifact_name: kintone-oauth-token-rs.exe
-            asset_name: kintone-oauth-token-rs-windows-amd64
+#          - os: windows-latest
+#            artifact_name: kintone-oauth-token-rs.exe
+#            asset_name: kintone-oauth-token-rs-windows-amd64
           - os: macos-latest
             artifact_name: kintone-oauth-token-rs
             asset_name: kintone-oauth-token-rs-macos-amd64
