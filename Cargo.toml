@@ -1,0 +1,17 @@
+[package]
+name = "kintone-oauth-token-rs"
+version = "0.1.0"
+authors = ["Toru Kobayashi <koba0004@gmail.com>"]
+edition = "2018"
+license = "MIT"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+webbrowser = "0.5.2"
+actix-web = { version = "2.0", features = ["openssl"] }
+actix-rt = "1.0.0"
+openssl = { version = "0.10", features = ["v110"] }
+serde = { version = "1.0", features = ["derive"] }
+reqwest = { version = "0.10", features = ["json"] }
+tokio = { version = "0.2", features = ["full"] }
