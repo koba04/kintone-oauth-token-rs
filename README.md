@@ -1,6 +1,8 @@
 # kintone-oauth-token-rs
 
-A command to get a OAuth token for Kintone
+A command to get a OAuth token for Kintone.
+
+**This command uses a self-signed certificate, so please use this at your own risk.**
 
 ## Requirements
 
