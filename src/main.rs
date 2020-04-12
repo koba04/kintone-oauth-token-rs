@@ -1,5 +1,7 @@
 use actix_web::{web, App, HttpRequest, HttpServer};
-use openssl::ssl::{SslAcceptor, SslAcceptorBuilder, SslFiletype, SslMethod};
+use openssl::ssl::{SslAcceptor, SslAcceptorBuilder, SslMethod};
+use openssl::pkey::PKey;
+use openssl::x509::X509;
 use reqwest;
 use serde::Deserialize;
 use std::env;
@@ -35,12 +37,10 @@ async fn callback(params: web::Query<CallbackParams>) -> String {
 
 fn create_ssl_builder() -> SslAcceptorBuilder {
     let mut builder = SslAcceptor::mozilla_intermediate(SslMethod::tls()).unwrap();
-    builder
-        .set_private_key_file("key.pem", SslFiletype::PEM)
-        .expect("Cannot find private key file on the current directory.");
-    builder
-        .set_certificate_chain_file("cert.pem")
-        .expect("Cannot find private cert file on the current directory.");
+    let key = PKey::private_key_from_pem(include_bytes!("key.pem")).unwrap();
+    let cert = X509::from_pem(include_bytes!("cert.pem")).unwrap();
+    builder.set_private_key(&key).unwrap();
+    builder.set_certificate(&cert).unwrap();
     builder
 }
 

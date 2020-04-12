@@ -4,7 +4,6 @@ A command to get a OAuth token for Kintone
 
 ## Requirements
 
-- Put `key.pem` and `cert.pem`, which is used for a server to receive a callback request.
 - Set the following environment variables
     - `KINTONE_BASE_URL`
     - `KINTONE_OAUTH_CLIENT_ID`
