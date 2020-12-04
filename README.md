@@ -18,6 +18,12 @@ A command to get a OAuth token for Kintone.
     - See the details on the page.
         - https://developer.kintone.io/hc/en-us/articles/360001562353-How-to-add-OAuth-clients
 
+If you use multiple scopes, you have to specify the following.
+
+```
+k:app_record:read%20k:app_record:write
+```
+
 ## How to use
 
 You can download the binary on the GitHub release page.
